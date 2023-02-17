@@ -19,6 +19,7 @@ dependencies:
   http:
   meta:
   simple_logger:
+  intl:
 
 dev_dependencies:
   flutter_test:
