@@ -32,9 +32,13 @@ class DeuteranopesLMS with _$DeuteranopesLMS {
   DeuteranopesLMS._();
 
   Color toRGB() {
-    double r = 0.080944 * l - 0.130504 * m + 0.116721 * s;
-    double g = -0.0102485 * l + 0.0540194 * m - 0.113615 * s;
-    double b = -0.000365294 * l - 0.00412163 * m + 0.693513 * s;    
+    double ld = 1 * l + 0 * m + 0 * s;
+    double md = 0.494207 * l + 0 * m + 1.24827 * s;
+    double sd = 0 * l + 0 * m + 1 * s;
+
+    double r = 0.080944 * ld - 0.130504 * md + 0.116721 * sd;
+    double g = -0.0102485 * ld + 0.0540194 * md - 0.113615 * sd;
+    double b = -0.000365294 * ld - 0.00412163 * md + 0.693513 * sd;    
     return Color.fromARGB(255, r.toInt(), g.toInt(), b.toInt());
   }
 }

@@ -32,9 +32,13 @@ class ProtanopesLMS with _$ProtanopesLMS {
   ProtanopesLMS._();
 
   Color toRGB() {
-    double r = 0.080944 * l - 0.130504 * m + 0.116721 * s;
-    double g = -0.0102485 * l + 0.0540194 * m - 0.113615 * s;
-    double b = -0.000365294 * l - 0.00412163 * m + 0.693513 * s;    
+    double lp = 0 * l + 2.02344 * m - 2.52581 * s;
+    double mp = 0 * l + 1 * m + 0 * s;
+    double sp = 0 * l + 0 * m + 1 * s;
+
+    double r = 0.080944 * lp - 0.130504 * mp + 0.116721 * sp;
+    double g = -0.0102485 * lp + 0.0540194 * mp - 0.113615 * sp;
+    double b = -0.000365294 * lp - 0.00412163 * mp + 0.693513 * sp;    
     return Color.fromARGB(255, r.toInt(), g.toInt(), b.toInt());
   }
 }
