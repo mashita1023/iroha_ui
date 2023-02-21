@@ -1,3 +1,4 @@
+import 'package:color_simulator/pages/image_picker_page/image_picker_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -21,12 +22,12 @@ class HogePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     void pop() => Navigator.of(context).pop();
     return Scaffold(
-        appBar: CupertinoNavigationBar(
-          middle: const Text('Hoge'),
+        appBar: const CupertinoNavigationBar(
+          middle: Text('Hoge'),
         ),
         body: Column(
-          children: const [
-            Text('Hoge'),
+          children: [
+            const Text('Hoge')
           ],
         ));
   }

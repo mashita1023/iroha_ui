@@ -20,6 +20,9 @@ dependencies:
   meta:
   simple_logger:
   intl:
+  image_picker:
+  image_picker_for_web:
+  riverpod_annotation: ^1.2.1
 
 dev_dependencies:
   flutter_test:
@@ -30,7 +33,10 @@ dev_dependencies:
   go_router_builder:
   json_serializable:
   mockito:
+  riverpod_generator:
 
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/test.png
