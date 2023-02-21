@@ -19,8 +19,12 @@ GoRoute get $testRoute => GoRouteData.$route(
           factory: $HogeRouteExtension._fromState,
         ),
         GoRouteData.$route(
-          path: 'input',
+          path: 'image',
           factory: $ImagePickerRouteExtension._fromState,
+        ),
+        GoRouteData.$route(
+          path: 'color',
+          factory: $ColorPickerRouteExtension._fromState,
         ),
       ],
     );
@@ -54,7 +58,20 @@ extension $ImagePickerRouteExtension on ImagePickerRoute {
       const ImagePickerRoute();
 
   String get location => GoRouteData.$location(
-        '/input',
+        '/image',
+      );
+
+  void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
+}
+
+extension $ColorPickerRouteExtension on ColorPickerRoute {
+  static ColorPickerRoute _fromState(GoRouterState state) =>
+      const ColorPickerRoute();
+
+  String get location => GoRouteData.$location(
+        '/color',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
