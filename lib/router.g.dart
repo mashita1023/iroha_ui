@@ -26,6 +26,10 @@ GoRoute get $testRoute => GoRouteData.$route(
           path: 'color',
           factory: $ColorPickerRouteExtension._fromState,
         ),
+        GoRouteData.$route(
+          path: 'color/display',
+          factory: $ColorDisplayRouteExtension._fromState,
+        ),
       ],
     );
 
@@ -72,6 +76,19 @@ extension $ColorPickerRouteExtension on ColorPickerRoute {
 
   String get location => GoRouteData.$location(
         '/color',
+      );
+
+  void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
+}
+
+extension $ColorDisplayRouteExtension on ColorDisplayRoute {
+  static ColorDisplayRoute _fromState(GoRouterState state) =>
+      const ColorDisplayRoute();
+
+  String get location => GoRouteData.$location(
+        '/color/display',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);

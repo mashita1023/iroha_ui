@@ -14,9 +14,9 @@ class PickImage extends _$PickImage {
   @override
   PickImageState build() => PickImageState();
 
-  Future<void> pickImage(PickedFile? image) async{
-     if (image == null) return;
-     state = state.copyWith(imageFile: File(image.path));
+  Future<void> pickImage(PickedFile? image) async {
+    if (image == null) return;
+    state = state.copyWith(imageFile: File(image.path));
   }
 }
 
@@ -25,4 +25,3 @@ class PickImageState with _$PickImageState {
   factory PickImageState({File? imageFile}) = _PickImageState;
   PickImageState._();
 }
-

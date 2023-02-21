@@ -12,14 +12,14 @@ class PickColor extends _$PickColor {
   @override
   PickColorState build() => PickColorState();
 
-  Future<void> pickImage(Color color) async{
+  Future<void> pickImage(Color color) async {
     state = state.copyWith(pickColor: color);
   }
 }
 
 @freezed
 class PickColorState with _$PickColorState {
-  factory PickColorState({@Default(Color(0xFFFFFFFF)) Color pickColor}) = _PickColorState;
+  factory PickColorState({@Default(Color(0xFFFFFFFF)) Color pickColor}) =
+      _PickColorState;
   PickColorState._();
 }
-

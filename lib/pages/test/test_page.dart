@@ -20,10 +20,10 @@ class TestPage extends ConsumerWidget {
             ElevatedButton(
               child: const Text('Image Picker'),
               onPressed: () => context.go('/image'),
-           ),
-           ElevatedButton(
-            onPressed: () => context.go('/color'), 
-            child: const Text('Color Picker'),
+            ),
+            ElevatedButton(
+              onPressed: () => context.go('/color'),
+              child: const Text('Color Picker'),
             )
           ],
         ));
