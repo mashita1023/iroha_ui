@@ -30,6 +30,10 @@ GoRoute get $testRoute => GoRouteData.$route(
           path: 'color/display',
           factory: $ColorDisplayRouteExtension._fromState,
         ),
+        GoRouteData.$route(
+          path: 'image/display',
+          factory: $ImageBlindRouteExtension._fromState,
+        ),
       ],
     );
 
@@ -89,6 +93,19 @@ extension $ColorDisplayRouteExtension on ColorDisplayRoute {
 
   String get location => GoRouteData.$location(
         '/color/display',
+      );
+
+  void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
+}
+
+extension $ImageBlindRouteExtension on ImageBlindRoute {
+  static ImageBlindRoute _fromState(GoRouterState state) =>
+      const ImageBlindRoute();
+
+  String get location => GoRouteData.$location(
+        '/image/display',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
