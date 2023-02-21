@@ -22,28 +22,33 @@ class ColorPickerPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     void pop() => Navigator.of(context).pop();
-    final Color pickerColor = ref.watch(pickColorProvider.select((value) => value.pickColor));
-    return Scaffold(
-        appBar: const CupertinoNavigationBar(
-          middle: Text('ColorPicker'),
-        ),
-        body: Column(
-          children: [
-            const Text('ColorPicker'),
-            Stack(
-              children: [
-                // HueRingPickerの方が良さそう？
-                ColorPicker(
-                  pickerColor: pickerColor ,
-                  onColorChanged: (value) => {
-                    ref.read(pickColorProvider.notifier).pickImage(value)
-                   },
-                ),
-              ],
-            ),
-            Text(pickerColor.toString()),
-          ],
-        ),);
-  }
+    final Color pickerColor =
+        ref.watch(pickColorProvider.select((value) => value.pickColor));
 
+    return Scaffold(
+      appBar: const CupertinoNavigationBar(
+        middle: Text('ColorPicker'),
+      ),
+      body: Column(
+        children: [
+          const Text('ColorPicker'),
+          Stack(
+            children: [
+              // HueRingPickerの方が良さそう？
+              ColorPicker(
+                pickerColor: pickerColor,
+                onColorChanged: (value) =>
+                    {ref.read(pickColorProvider.notifier).pickImage(value)},
+              ),
+            ],
+          ),
+          Text(pickerColor.toString()),
+          RawMaterialButton(
+            onPressed: () => context.go('/color/display'),
+            fillColor: pickerColor,
+          )
+        ],
+      ),
+    );
+  }
 }

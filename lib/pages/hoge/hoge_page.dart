@@ -26,9 +26,7 @@ class HogePage extends ConsumerWidget {
           middle: Text('Hoge'),
         ),
         body: Column(
-          children: [
-            const Text('Hoge')
-          ],
+          children: [const Text('Hoge')],
         ));
   }
 }
