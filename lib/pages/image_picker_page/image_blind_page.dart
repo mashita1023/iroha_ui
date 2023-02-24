@@ -39,19 +39,19 @@ class ImageBlindPage extends ConsumerWidget {
             SizedBox(
               width: 240,
               height: 240,
-              child: displayImage(imageFile),
+              child: displayImage(imageFile, Blindness.common),
             ),
             const Text("P型"),
             SizedBox(
               width: 240,
               height: 240,
-              child: displayImage(imageFile),
+              child: displayImage(imageFile, Blindness.protanope),
             ),
             const Text("D型"),
             SizedBox(
               width: 240,
               height: 240,
-              child: displayImage(imageFile),
+              child: displayImage(imageFile, Blindness.deuteranopes),
             ),
           ],
         ),

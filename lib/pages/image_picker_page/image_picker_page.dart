@@ -8,6 +8,7 @@ import 'package:image_picker_for_web/image_picker_for_web.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:color_simulator/model/pick_image_notifier.dart';
 import 'package:color_simulator/common_widgets/display_image.dart';
+import 'package:color_simulator/model/color_blind.dart';
 
 class ImagePickerRoute extends GoRouteData {
   const ImagePickerRoute();
@@ -40,7 +41,7 @@ class ImagePickerPage extends ConsumerWidget {
               SizedBox(
                 width: 240,
                 height: 240,
-                child: displayImage(imageFile),
+                child: displayImage(imageFile, Blindness.common),
               ),
               RawMaterialButton(
                 onPressed: () async {

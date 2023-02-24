@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PickImageState {
-  File? get imageFile => throw _privateConstructorUsedError;
+  Uint8List? get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PickImageStateCopyWith<PickImageState> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $PickImageStateCopyWith<$Res> {
           PickImageState value, $Res Function(PickImageState) then) =
       _$PickImageStateCopyWithImpl<$Res, PickImageState>;
   @useResult
-  $Res call({File? imageFile});
+  $Res call({Uint8List? imageFile});
 }
 
 /// @nodoc
@@ -51,7 +51,7 @@ class _$PickImageStateCopyWithImpl<$Res, $Val extends PickImageState>
       imageFile: freezed == imageFile
           ? _value.imageFile
           : imageFile // ignore: cast_nullable_to_non_nullable
-              as File?,
+              as Uint8List?,
     ) as $Val);
   }
 }
@@ -64,7 +64,7 @@ abstract class _$$_PickImageStateCopyWith<$Res>
       __$$_PickImageStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({File? imageFile});
+  $Res call({Uint8List? imageFile});
 }
 
 /// @nodoc
@@ -84,22 +84,30 @@ class __$$_PickImageStateCopyWithImpl<$Res>
       imageFile: freezed == imageFile
           ? _value.imageFile
           : imageFile // ignore: cast_nullable_to_non_nullable
-              as File?,
+              as Uint8List?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_PickImageState extends _PickImageState {
+class _$_PickImageState extends _PickImageState with DiagnosticableTreeMixin {
   _$_PickImageState({this.imageFile}) : super._();
 
   @override
-  final File? imageFile;
+  final Uint8List? imageFile;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'PickImageState(imageFile: $imageFile)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'PickImageState'))
+      ..add(DiagnosticsProperty('imageFile', imageFile));
   }
 
   @override
@@ -107,12 +115,12 @@ class _$_PickImageState extends _PickImageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PickImageState &&
-            (identical(other.imageFile, imageFile) ||
-                other.imageFile == imageFile));
+            const DeepCollectionEquality().equals(other.imageFile, imageFile));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, imageFile);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(imageFile));
 
   @JsonKey(ignore: true)
   @override
@@ -122,11 +130,11 @@ class _$_PickImageState extends _PickImageState {
 }
 
 abstract class _PickImageState extends PickImageState {
-  factory _PickImageState({final File? imageFile}) = _$_PickImageState;
+  factory _PickImageState({final Uint8List? imageFile}) = _$_PickImageState;
   _PickImageState._() : super._();
 
   @override
-  File? get imageFile;
+  Uint8List? get imageFile;
   @override
   @JsonKey(ignore: true)
   _$$_PickImageStateCopyWith<_$_PickImageState> get copyWith =>
