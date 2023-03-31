@@ -7,7 +7,7 @@ Deuteranopes: 緑が見にくい (25%)
 Tritanope: 青がみにくい
 Acromatic: 錐体が1種類
  */
-enum Blindness { common, protanope, deuteranopes, tritanope, acromatic }
+enum Blindness { common, protanope, deuteranopes, tritanopes, acromatic }
 
 extension ColorBlind on Color {
   Color toDeuteranopes() {
