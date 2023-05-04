@@ -1,6 +1,6 @@
-# color_simulator
+# iro-ha
 
-A new Flutter project.
+画像やPDFなどを色覚異常での見え方に変換するアプリケーション
 
 ## Getting Started
 
