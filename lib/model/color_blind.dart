@@ -1,5 +1,14 @@
 import 'dart:ui';
 
+/*
+Common: 色盲じゃない（男性の95%，女性の99%）
+Rotanope: 赤がみにくい (75%)
+Deuteranopes: 緑が見にくい (25%)
+Tritanope: 青がみにくい
+Acromatic: 錐体が1種類
+ */
+enum Blindness { common, protanope, deuteranopes, tritanopes, acromatic }
+
 extension ColorBlind on Color {
   Color toDeuteranopes() {
     const double weight = 0.957237;

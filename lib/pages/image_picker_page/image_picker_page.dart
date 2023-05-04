@@ -7,6 +7,10 @@ import 'package:go_router/go_router.dart';
 import 'package:image_picker_for_web/image_picker_for_web.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:color_simulator/model/pick_image_notifier.dart';
+import 'package:color_simulator/model/blindness_notifier.dart';
+import 'package:color_simulator/common_widgets/display_image.dart';
+import 'package:color_simulator/model/color_blind.dart';
+import 'package:color_simulator/util/logger.dart';
 
 class ImagePickerRoute extends GoRouteData {
   const ImagePickerRoute();
@@ -29,17 +33,17 @@ class ImagePickerPage extends ConsumerWidget {
         ref.watch(pickImageProvider.select((value) => value.imageFile));
     return Scaffold(
       appBar: const CupertinoNavigationBar(
-        middle: Text('Input'),
+        middle: Text('Image Picker'),
       ),
       body: Column(
         children: [
-          const Text('Input'),
+          const Text('Image Picker'),
           Stack(
             children: [
               SizedBox(
                 width: 240,
                 height: 240,
-                child: displayImage(imageFile),
+                child: displayImage(imageFile, Blindness.common),
               ),
               RawMaterialButton(
                 onPressed: () async {
@@ -55,16 +59,12 @@ class ImagePickerPage extends ConsumerWidget {
               ),
             ],
           ),
+          RawMaterialButton(
+            onPressed: () => context.go('/image/display'),
+            child: const Text('次へ'),
+          ),
         ],
       ),
     );
-  }
-
-  Widget displayImage(imageFile) {
-    if (imageFile != null) {
-      return Image.network(imageFile.path, fit: BoxFit.cover);
-    } else {
-      return Image.asset('assets/test.png');
-    }
   }
 }
