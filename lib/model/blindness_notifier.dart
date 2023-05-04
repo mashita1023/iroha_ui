@@ -16,6 +16,7 @@ part 'blindness_notifier.g.dart';
 
 @riverpod
 class BlindnessImage extends _$BlindnessImage {
+
   @override
   FutureOr build() {
     final pickImage = ref.watch(pickImageProvider);
@@ -23,8 +24,8 @@ class BlindnessImage extends _$BlindnessImage {
   }
 
   toProtanopesImage () async{
-    final pickImage = ref.watch(pickImageProvider);
-    final imageFile = pickImage.imageFile;
+    final imageRef = ref.watch(pickImageProvider);
+    final imageFile = imageRef.imageFile;
     if (imageFile == null) return Uint8List(0);
     final image = img.decodeImage(imageFile);
     if (image == null) return Uint8List(0);
@@ -33,8 +34,8 @@ class BlindnessImage extends _$BlindnessImage {
   }
 
   toDeuteranopesImage() async{
-    final pickImage = ref.watch(pickImageProvider);
-    final imageFile = pickImage.imageFile;
+    final imageRef = ref.watch(pickImageProvider);
+    final imageFile = imageRef.imageFile;
     if (imageFile == null) return Uint8List(0);
     final image = img.decodeImage(imageFile);
     if (image == null) return Uint8List(0);

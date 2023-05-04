@@ -24,11 +24,31 @@ class ImageBlindPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isLoading = ref.watch(loadingProvider);
     final imageFile =
         ref.watch(pickImageProvider.select((value) => value.imageFile));
     final protanopesImage = ref.watch(protanopesImageProvider);
     final deuteranopesImage = ref.watch(deuteranopesImageProvider);
-    final isLoading = ref.watch(loadingProvider);
+
+    if (isLoading.isLoading) {
+      Scaffold(
+        body: Center(
+          child: Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: Theme.of(context).colorScheme.surface,
+            ),
+            child: Column(
+              children: const [
+                CircularProgressIndicator(),
+                Text('Wait a second.'),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
 
     return Scaffold(
       appBar: const CupertinoNavigationBar(
