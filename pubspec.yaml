@@ -14,7 +14,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_riverpod: 2.2.0
   freezed_annotation: 2.2.0
-  gap: 2.0.1
+  gap: 2.0.2
   go_router: 6.0.9
   http: 0.13.5
   meta: 1.8.0
